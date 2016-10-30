@@ -19,3 +19,15 @@ Decimal, Binary, Hex
 |13|1101b|0x0D|
 |14|1110b|0x0E|
 |15|1111b|0x0F|
+
+Word sizes (x86)
+-------------
+
+size|type|register|
+|---|---|---|
+|4 Bit|nibble|no register|
+|8 Bit|byte|AL|
+|16 Bit|word|AX|
+|32 Bit|double word|EAX|
+|64 Bit|quadruple word|MM0|
+|128 Bit|double quadruple word|XMM0|
