@@ -25,9 +25,25 @@ Word sizes (x86)
 
 size|type|register|
 |---|---|---|
-|4 Bit|nibble|no register|
-|8 Bit|byte|AL|
-|16 Bit|word|AX|
-|32 Bit|double word|EAX|
-|64 Bit|quadruple word|MM0|
-|128 Bit|double quadruple word|XMM0|
+|4 bit|nibble|no register|
+|8 bit|byte|AL|
+|16 bit|word|AX|
+|32 bit|double word|EAX|
+|64 bit|quadruple word|MM0|
+|128 bit|double quadruple word|XMM0|
+
+Integer representation
+----------------------
+
+|kind|representation|
+|---|---|
+|signed|integer representing positive and negative values|
+|unsigned|integer only representing positive values|
+
+
+|size|names|signed|unsigned|
+|---|---|---|---|
+|8 bit|byte, octet, char|-128 to +127|0 to 255|
+|16 bit|word, short int|-32,768 to +32,767|0 to 65,535|
+|32 bit|double word, int|-2,147,483,648 to +2,147,483,647|0 to 4,294,967,295|
+|64 bit|quadruple word, long int|−9,223,372,036,854,775,808 to +9,223,372,036,854,775,807|0 to 18,446,744,073,709,551,615|
