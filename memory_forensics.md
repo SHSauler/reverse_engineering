@@ -60,7 +60,7 @@ $ volatility --profile=Win10x64_10586 psscan -f <image>.raw | tee "`date +%Y%m%d
 $ diff <(cat `date "+%Y%m%d"`-pslist.txt | cut -d" " -f2 | sort -n) <(cat `date "+%Y%m%d"`-psscan.txt | cut -d" " -f2 | sort -n)
 ```
 
-## Display processes as tree
+### Display processes as tree
 
 ```bash
 volatility --profile=Win10x64_10586 -f <image>.raw pstree | tee "`date +%Y%m%d`-pstree.txt"
@@ -89,4 +89,17 @@ $ volatility --profile=Win10x64_10586 -f <image>.raw dlllist -p <proc_num> | tee
 ```bash
 $ volatility --profile=Win10x64_10586 -f <image>.raw netscan | tee "`date +%Y%m%d`-netscan.txt"
 ```
+
+### Getting modules
+
+```bash
+$ volatility --profile=Win10x64_10586 -f <image>.raw modules | tee "`date +%Y%m%d`-modules.txt"
+```
+
+### Dumping modules
+
+```bash
+$ volatility --profile=Win10x64_10586 -f <image>.raw moddump -D output/ | tee "`date +%Y%m%d`-moddump.txt"
+```
+
 
