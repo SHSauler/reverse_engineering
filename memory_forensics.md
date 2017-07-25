@@ -59,3 +59,28 @@ $ volatility --profile=Win10x64_10586 psscan -f <image>.raw | tee "`date +%Y%m%d
 ```bash
 $ diff <(cat `date "+%Y%m%d"`-pslist.txt | cut -d" " -f2 | sort -n) <(cat `date "+%Y%m%d"`-psscan.txt | cut -d" " -f2 | sort -n)
 ```
+
+### Finding hidden processes
+```bash
+$ volatility --profile=Win10x64_10586 psxview -f <image>.raw | tee "`date +%Y%m%d`-psxview.txt"
+Offset(P)          Name                    PID pslist psscan thrdproc pspcid csrss session deskthrd ExitTime
+------------------ -------------------- ------ ------ ------ -------- ------ ----- ------- -------- --------
+0x000000010ee29600 svchost.exe            1152 True   True   True     True   True  True    False    
+0x00000001bb678100 ffffff.exe             9344 True   True   True     True   True  True    False    
+```
+
+### Checking for code injection
+```bash
+$ volatility --profile=Win10x64_10586 -f <image>.raw malfind -p <proc_num> | tee "`date +%Y%m%d`-malfind-p<proc_num>.txt"
+```
+
+### Analyzing DLLs for process
+```bash
+$ volatility --profile=Win10x64_10586 -f <image>.raw dlllist -p <proc_num> | tee "`date +%Y%m%d`-ddlist-p<proc_num>.txt"
+```
+
+### Network connections
+```bash
+$ volatility --profile=Win10x64_10586 -f <image>.raw netscan | tee "`date +%Y%m%d`-netscan.txt"
+```
+
