@@ -60,6 +60,12 @@ $ volatility --profile=Win10x64_10586 psscan -f <image>.raw | tee "`date +%Y%m%d
 $ diff <(cat `date "+%Y%m%d"`-pslist.txt | cut -d" " -f2 | sort -n) <(cat `date "+%Y%m%d"`-psscan.txt | cut -d" " -f2 | sort -n)
 ```
 
+## Display processes as tree
+
+```bash
+volatility --profile=Win10x64_10586 -f <image>.raw pstree | tee "`date +%Y%m%d`-pstree.txt"
+```
+
 ### Finding hidden processes
 ```bash
 $ volatility --profile=Win10x64_10586 psxview -f <image>.raw | tee "`date +%Y%m%d`-psxview.txt"
