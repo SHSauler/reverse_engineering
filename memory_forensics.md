@@ -16,6 +16,10 @@ Meta-package with:
   volatility-tools, winregfs, wipe, yara
 ```
 
+## Command ref
+
+Don't look here, look here: https://github.com/volatilityfoundation/volatility/wiki/Command-Reference
+
 ### Converting from aff4
 
 `$ rekal -f <image>.aff4 imagecopy -O <image>.raw`
